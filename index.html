@@ -3,205 +3,747 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>charlotte ardui</title>
-<meta name="description" content="[Your Name] | [Your Field]">
+
+<title>Charlotte Ardui</title>
+
+<meta name="description" content="Charlotte Ardui — architect, researcher, author and educator.">
+
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f6f2;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+
+/* --------------------------------
+   GENERAL
+-------------------------------- */
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* --------------------------------
+   HEADER
+-------------------------------- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 22px 28px;
+
+  mix-blend-mode: multiply;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.navigation {
+  display: flex;
+  gap: 22px;
+}
+
+.navigation a {
+  font-size: 13px;
+}
+
+
+/* --------------------------------
+   INTRO
+-------------------------------- */
+
+.intro {
+  min-height: 100vh;
+
+  padding: 140px 7vw 100px;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.intro-text {
+  max-width: 650px;
+}
+
+.intro h1 {
+  font-size: clamp(42px, 7vw, 100px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  margin-bottom: 35px;
+}
+
+.intro-description {
+  max-width: 430px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+/* --------------------------------
+   EDITORIAL GRID
+-------------------------------- */
+
+.project {
+  position: relative;
+  min-height: 100vh;
+
+  padding: 8vw 5vw;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 20px;
+}
+
+
+/* --------------------------------
+   IMAGE SIZES
+-------------------------------- */
+
+.image {
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* large landscape */
+
+.image-large {
+  grid-column: 1 / 7;
+  height: 520px;
+}
+
+
+/* small image */
+
+.image-small {
+  grid-column: 8 / 11;
+  height: 300px;
+}
+
+
+/* portrait */
+
+.image-portrait {
+  grid-column: 9 / 12;
+  height: 500px;
+}
+
+
+/* wide image */
+
+.image-wide {
+  grid-column: 2 / 9;
+  height: 430px;
+}
+
+
+/* --------------------------------
+   TEXT BLOCKS
+-------------------------------- */
+
+.text {
+  font-size: 13px;
+  max-width: 300px;
+}
+
+.text-large {
+  font-size: 17px;
+  line-height: 1.35;
+  max-width: 390px;
+}
+
+.project-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  margin-bottom: 12px;
+}
+
+.project-description {
+  margin-top: 10px;
+}
+
+
+/* positions */
+
+.text-1 {
+  grid-column: 9 / 12;
+  align-self: end;
+  padding-bottom: 50px;
+}
+
+.text-2 {
+  grid-column: 2 / 5;
+  align-self: center;
+}
+
+.text-3 {
+  grid-column: 9 / 12;
+  align-self: center;
+}
+
+
+/* --------------------------------
+   SPECIAL FULL WIDTH SECTION
+-------------------------------- */
+
+.statement {
+  min-height: 80vh;
+
+  padding: 12vw 7vw;
+
+  display: flex;
+  align-items: center;
+}
+
+.statement p {
+  max-width: 850px;
+
+  font-size: clamp(30px, 4vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+
+/* --------------------------------
+   ABOUT
+-------------------------------- */
+
+.about {
+  min-height: 100vh;
+
+  padding: 12vw 7vw;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8vw;
+}
+
+.about-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-text {
+  max-width: 500px;
+}
+
+.about-text p {
+  margin-bottom: 25px;
+}
+
+
+/* --------------------------------
+   CONTACT
+-------------------------------- */
+
+.contact {
+  min-height: 70vh;
+
+  padding: 10vw 7vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact h2 {
+  font-size: clamp(45px, 8vw, 110px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  font-size: 13px;
+}
+
+
+/* --------------------------------
+   FOOTER
+-------------------------------- */
+
+footer {
+  padding: 25px 28px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 11px;
+  color: #777;
+}
+
+
+/* --------------------------------
+   MOBILE
+-------------------------------- */
+
+@media (max-width: 700px) {
 
   body {
-    background: #ffffff;
-    color: #000000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
-    text-align: center;
+    font-size: 13px;
   }
-  a { color: #1155CC; }
-  a:focus-visible, button:focus-visible { outline: 2px solid #1155CC; outline-offset: 2px; }
-  .container { max-width: 580px; margin: 0 auto; padding: 0 24px; }
 
-  /* ---------- Header / nav ---------- */
-  header { padding: 26px 0 20px; border-bottom: 1px solid #eee; }
-  .site-name { display: inline-block; color: #000; text-decoration: none; font-size: 2rem; margin-bottom: 4px; }
-  .tagline { margin-bottom: 20px; }
-  .tagline p { font-style: italic; line-height: 1.45; font-size: 12px; }
-  nav { display: flex; justify-content: center; gap: 44px; flex-wrap: wrap; margin-top: 4px; }
-  nav a { color: #000; text-decoration: none; padding-bottom: 2px; }
-  nav a.active { text-decoration: underline; }
-
-  /* ---------- Page switching: only one visible at a time ---------- */
-  .page { display: none; padding: 50px 24px 60px; }
-  .page.is-visible { display: block; }
-
-  /* ---------- Home: slider ---------- */
-  .slider-container { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .slider { max-width: 400px; width: 100%; }
-  .slide { display: none; }
-  .slide.is-active { display: block; }
-  .slide-media { aspect-ratio: 1 / 1; margin-bottom: 14px; }
-  .slide-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .placeholder-photo {
-    width: 100%; height: 100%;
-    background-image: repeating-linear-gradient(45deg, #eee, #eee 10px, #f7f7f7 10px, #f7f7f7 20px);
-    display: flex; align-items: center; justify-content: center;
-    color: #999; font-size: 0.8rem;
+  .header {
+    padding: 16px;
   }
-  .slide-caption { margin-bottom: 4px; font-size: 12px; }
-  .slide-desc { color: #000; font-size: 12px; font-style: italic; }
-  .slider-next {
-    background: none; border: none; font-size: 1.4rem; line-height: 1;
-    cursor: pointer; color: #000; padding: 8px;
+
+  .navigation {
+    gap: 12px;
   }
-  .slider-next:hover { color: #1155CC; }
 
-  /* ---------- Work: talks & writing list ---------- */
-  #page-work .year { text-decoration: underline; margin-bottom: 12px; }
-  #page-work .year:not(:first-child) { margin-top: 34px; }
-  #page-work .entry { margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
-  #page-work .entry:last-child { margin-bottom: 0; }
-
-  /* ---------- About ---------- */
-  #page-about p { max-width: 480px; margin: 0 auto 20px; }
-  #page-about p:last-child { margin-bottom: 0; }
-
-  /* ---------- Contact ---------- */
-  #page-contact p { max-width: 420px; margin: 0 auto; }
-
-  footer { padding: 30px 0 40px; color: #999; font-size: 0.85rem; }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { scroll-behavior: auto !important; }
+  .navigation a:nth-child(1) {
+    display: none;
   }
+
+  .intro {
+    min-height: 90vh;
+    padding: 120px 20px 60px;
+  }
+
+  .intro h1 {
+    font-size: 58px;
+  }
+
+  .intro-description {
+    font-size: 14px;
+  }
+
+
+  .project {
+    min-height: auto;
+
+    padding: 70px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+
+  .image-large,
+  .image-small,
+  .image-portrait,
+  .image-wide {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-large {
+    height: 420px;
+  }
+
+  .image-small {
+    width: 65%;
+    height: 250px;
+    align-self: flex-end;
+  }
+
+  .image-portrait {
+    width: 75%;
+    height: 430px;
+    align-self: flex-end;
+  }
+
+  .image-wide {
+    height: 300px;
+  }
+
+
+  .text,
+  .text-large,
+  .text-1,
+  .text-2,
+  .text-3 {
+    max-width: 90%;
+    padding: 0;
+  }
+
+
+  .statement {
+    min-height: 70vh;
+    padding: 100px 20px;
+  }
+
+  .statement p {
+    font-size: 34px;
+  }
+
+
+  .about {
+    min-height: auto;
+
+    padding: 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+  }
+
+
+  .contact {
+    min-height: 70vh;
+    padding: 80px 20px 40px;
+  }
+
+  .contact h2 {
+    font-size: 65px;
+  }
+
+  .contact-info {
+    display: block;
+  }
+
+  .contact-info p {
+    margin-top: 20px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
 
-<header>
-  <div class="container">
-    <a href="#home" class="site-name">charlotte ardui</a>
-    <div class="tagline">
-      <p>architect · researcher · author · educator </p>
-      <p>adaptive reuse · research by design </p>
-      <p>collective spaces · 20th century heritage</p>
-    </div>
-    <nav id="mainNav">
-      <a href="#work" data-page="work">Work</a>
-      <a href="#about" data-page="about">About</a>
-      <a href="#contact" data-page="contact">Contact</a>
-    </nav>
-  </div>
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+  <a href="#top" class="logo">
+    charlotte ardui
+  </a>
+
+  <nav class="navigation">
+    <a href="#work">work</a>
+    <a href="#about">about</a>
+    <a href="#contact">contact</a>
+  </nav>
+
 </header>
 
-<main>
 
-  <!-- HOME: photo slider only -->
-  <section id="page-home" class="page is-visible">
-    <div class="container slider-container">
-      <div class="slider">
-        <div class="slide is-active">
-          <div class="slide-media"><img src="image/random.jpg"></div> <p class="slide-caption">The Elephant</p></div>
-          <p class="slide-caption">[Project One] ([2026])</p>
-          <p class="slide-desc">[One or two sentences on this project — what it is, where, and who you worked with.]</p>
-        </div>
-        <div class="slide">
-          <div class="slide-media"><div class="placeholder-photo">[Photo 2 of 2]</div></div>
-          <p class="slide-caption">[Project One] ([2026])</p>
-          <p class="slide-desc">[One or two sentences on this project — what it is, where, and who you worked with.]</p>
-        </div>
-        <div class="slide">
-          <div class="slide-media"><div class="placeholder-photo">[Photo 1 of 2]</div></div>
-          <p class="slide-caption">[Project Two] ([2024])</p>
-          <p class="slide-desc">[One or two sentences on this project — what it is, where, and who you worked with.]</p>
-        </div>
-        <div class="slide">
-          <div class="slide-media"><div class="placeholder-photo">[Photo 2 of 2]</div></div>
-          <p class="slide-caption">[Project Two] ([2024])</p>
-          <p class="slide-desc">[One or two sentences on this project — what it is, where, and who you worked with.]</p>
-        </div>
-      </div>
-      <button class="slider-next" id="sliderNext" aria-label="Next photo">→</button>
+
+<main id="top">
+
+
+<!-- =====================================
+     INTRO
+===================================== -->
+
+<section class="intro">
+
+  <div class="intro-text">
+
+    <h1>
+      charlotte<br>
+      ardui
+    </h1>
+
+    <p class="intro-description">
+      Architect, researcher, author and educator working across
+      adaptive reuse, research by design, collective spaces and
+      twentieth-century heritage.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PROJECT 01
+===================================== -->
+
+<section class="project" id="work">
+
+
+  <!-- grote foto -->
+
+  <div class="image image-large">
+
+    <img src="image/random.jpg" alt="Project image">
+
+  </div>
+
+
+  <!-- tekst rechts -->
+
+  <div class="text text-1">
+
+    <div class="project-title">
+      The Elephant · 2026
     </div>
-  </section>
 
-  <!-- WORK: talks & writing list only -->
-  <section id="page-work" class="page">
-    <div class="container">
-      <p class="year">[2026]</p>
-      <p class="entry"><em>[Talk or publication title].</em> [Type of event] at [Venue]. ([Location])</p>
+    <p>
+      A project exploring architecture, landscape and the
+      transformation of existing structures through new forms
+      of collective use.
+    </p>
 
-      <p class="year">[2025]</p>
-      <p class="entry"><em>[Talk or publication title].</em> [Type of event] at [Venue]. ([Location])</p>
+  </div>
 
-      <p class="year">[2024]</p>
-      <p class="entry"><em>[Talk or publication title].</em> Guest lecture in the course '[Course Name]' with [Host Name]. [Department], [Institution]. ([Location])</p>
-      <p class="entry"><em>[Talk or publication title].</em> [Conference Name]. ([Location])</p>
+
+  <!-- klein beeld -->
+
+  <div class="image image-small">
+
+    <img src="image/project-02.jpg" alt="Project detail">
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================
+     TEXT / STATEMENT
+===================================== -->
+
+<section class="statement">
+
+  <p>
+    Architecture is not only about making new buildings.
+    It is also about looking carefully at what is already there,
+    and asking what it could become.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================
+     PROJECT 02
+===================================== -->
+
+<section class="project">
+
+
+  <div class="text text-2">
+
+    <div class="project-title">
+      Research by design
     </div>
-  </section>
 
-  <!-- ABOUT: bio only -->
-  <section id="page-about" class="page">
-    <div class="container">
-      <p>[Your Name] (b. [Year], [Birthplace]) is a [your profession] based in [your city]. They earned their [degree] from [University] in [Year] and completed their [advanced degree] at [University] in [Year].</p>
-      <p>[Your Name] is currently [your current role — e.g. a PhD candidate] in the [Department] at [Institution], supervised by [Supervisor Name(s)]. They are broadly interested in [your research or professional interests]. Their [project type], <em>[Project Title]</em>, examines [one sentence on what it explores].</p>
-      <p>[Your Name] is a registered [profession] with [Licensing Body] ([registration reference, if applicable — delete this sentence if it doesn't apply to you]).</p>
-    </div>
-  </section>
+    <p>
+      My work investigates how existing buildings and
+      infrastructures can be adapted to accommodate new
+      collective and social conditions.
+    </p>
 
-  <!-- CONTACT: contact line only -->
-  <section id="page-contact" class="page">
-    <div class="container">
-      <p>Get in touch via email at <a href="mailto:your.email@example.com">your.email@example.com</a> or message <a href="https://instagram.com/yourusername" target="_blank" rel="noopener">@yourusername</a> on Instagram.</p>
+  </div>
+
+
+  <div class="image image-wide">
+
+    <img src="image/project-03.jpg" alt="Research project">
+
+  </div>
+
+
+  <div class="image image-portrait">
+
+    <img src="image/project-04.jpg" alt="Architecture project">
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================
+     PROJECT 03
+===================================== -->
+
+<section class="project">
+
+
+  <div class="image image-large">
+
+    <img src="image/project-05.jpg" alt="Landscape project">
+
+  </div>
+
+
+  <div class="text text-3">
+
+    <div class="project-title">
+      Collective spaces
     </div>
-  </section>
+
+    <p>
+      Research into the role of shared spaces and public
+      landscapes in contemporary cities.
+    </p>
+
+    <p class="project-description">
+      Photography, mapping and architectural research
+      come together as tools for understanding place.
+    </p>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================
+     ABOUT
+===================================== -->
+
+<section class="about" id="about">
+
+
+  <div class="about-title">
+    About
+  </div>
+
+
+  <div class="about-text">
+
+    <p>
+      Charlotte Ardui is an architect, researcher, author
+      and educator working between architectural practice
+      and academic research.
+    </p>
+
+    <p>
+      Her work focuses on adaptive reuse, twentieth-century
+      heritage, collective spaces and research by design.
+    </p>
+
+    <p>
+      Through architectural projects, writing, teaching and
+      visual research, she investigates how existing places
+      can be understood, transformed and reused.
+    </p>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================
+     CONTACT
+===================================== -->
+
+<section class="contact" id="contact">
+
+  <h2>
+    Let's<br>
+    talk.
+  </h2>
+
+
+  <div class="contact-info">
+
+    <p>
+      <a href="mailto:your.email@example.com">
+        your.email@example.com
+      </a>
+    </p>
+
+    <p>
+      Antwerp · Belgium
+    </p>
+
+    <p>
+      <a href="https://instagram.com/yourusername"
+         target="_blank">
+        Instagram
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
+
 
 </main>
 
+
+
 <footer>
-  <div class="container">
-    <p>© <span id="year"></span> [Your Name]</p>
-  </div>
+
+  <span>
+    © 2026 Charlotte Ardui
+  </span>
+
+  <span>
+    Architecture · Research · Writing
+  </span>
+
 </footer>
 
-<script>
-(function(){
-  // Home slider
-  var slides = document.querySelectorAll('#page-home .slide');
-  var sliderNext = document.getElementById('sliderNext');
-  var currentSlide = 0;
-  if (sliderNext && slides.length > 1) {
-    sliderNext.addEventListener('click', function(){
-      slides[currentSlide].classList.remove('is-active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('is-active');
-    });
-  }
 
-  // Independent page switching (Work / About / Contact / Home)
-  var pages = document.querySelectorAll('.page');
-  var navLinks = document.querySelectorAll('#mainNav a');
-
-  function showPage(name){
-    pages.forEach(function(p){ p.classList.remove('is-visible'); });
-    var target = document.getElementById('page-' + name) || document.getElementById('page-home');
-    target.classList.add('is-visible');
-    navLinks.forEach(function(link){
-      link.classList.toggle('active', link.getAttribute('data-page') === name);
-    });
-    window.scrollTo(0, 0);
-  }
-
-  function handleHash(){
-    var hash = window.location.hash.replace('#', '') || 'home';
-    showPage(hash);
-  }
-
-  window.addEventListener('hashchange', handleHash);
-  handleHash();
-
-  var yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-})();
-</script>
 </body>
 </html>
