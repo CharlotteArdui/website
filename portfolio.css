@@ -284,12 +284,17 @@ a:focus-visible, button:focus-visible {
 
 /* White glyphs invert the actual composited background pixel by pixel. */
 .portfolio { background: #fff; }
-.masthead { color: #000; mix-blend-mode: normal; }
-.profile {
-  background-color: #000;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+.masthead {
+  color: #fff;
+  mix-blend-mode: difference;
+  filter: saturate(1.16) contrast(1.08);
+  text-shadow: 0 0 0.45px currentColor;
+}
+
+/* Desktop: begin just below the eighth line (Hasselt), and reserve space for captions. */
+@media (min-width: 721px) {
+  :root {
+    --image-top: calc(var(--top-inset) + 9.6 * var(--copy-size));
+    --image-height: min(calc(14.4 * var(--copy-size)), calc(100dvh - var(--image-top) - 92px));
+  }
 }

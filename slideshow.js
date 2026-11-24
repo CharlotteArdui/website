@@ -34,27 +34,9 @@ let baseSpeed = 29;
 let viewportWidth = 0;
 let pointerX = 0;
 let activeArtwork = null;
-const profile = document.querySelector('.profile');
-const inverseSources = artwork.map(img => img.getAttribute('src').replace(/\.webp$/, '-inverse.webp'));
-const inversePreload = inverseSources.map(src => { const img = new Image(); img.src = src; return img; });
-let profileX = 0, profileY = 0, profileWidth = 0, profileHeight = 0;
 
 function paintPosition() {
   filmstrip.style.transform = `translate3d(${-distance}px, 0, 0)`;
-  const sources = [], positions = [], sizes = [];
-  for (let r = 0; r < reelCount; r++) {
-    measurements.forEach((m, i) => {
-      const x = stripLeft + r * loopWidth + m.x - distance - profileX;
-      const y = stripTop - profileY;
-      if (x + m.width <= 0 || x >= profileWidth || y + m.height <= 0 || y >= profileHeight) return;
-      sources.push(`url("${inverseSources[i]}")`);
-      positions.push(`${x}px ${y}px`);
-      sizes.push(`${m.width}px ${m.height}px`);
-    });
-  }
-  profile.style.backgroundImage = sources.length ? sources.join(', ') : 'none';
-  profile.style.backgroundPosition = positions.join(', ');
-  profile.style.backgroundSize = sizes.join(', ');
 }
 
 function positionFootnote() {
@@ -112,11 +94,6 @@ function sizeFilmstrip() {
   stripLeft = parseFloat(stripStyle.left);
   stripTop = reelBox.top - portfolioBox.top;
   viewportWidth = portfolioBox.width;
-  const profileBox = profile.getBoundingClientRect();
-  profileX = profileBox.left - portfolioBox.left;
-  profileY = profileBox.top - portfolioBox.top;
-  profileWidth = profileBox.width;
-  profileHeight = profileBox.height;
   baseSpeed = viewportWidth <= 720 ? 23 : 29;
 
   if (previousLoopWidth > 0) distance *= loopWidth / previousLoopWidth;
