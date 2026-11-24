@@ -94,7 +94,7 @@ function sizeFilmstrip() {
   stripLeft = parseFloat(stripStyle.left);
   stripTop = reelBox.top - portfolioBox.top;
   viewportWidth = portfolioBox.width;
-  baseSpeed = viewportWidth <= 720 ? 23 : 29;
+  baseSpeed = viewportWidth <= 720 ? 32 : 29;
 
   if (previousLoopWidth > 0) distance *= loopWidth / previousLoopWidth;
 

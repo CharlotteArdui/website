@@ -332,3 +332,12 @@ a:focus-visible, button:focus-visible {
   }
   .artwork-footnote { z-index: 1; }
 }
+
+/* Mobile v11: independent normal-flow header and larger images. */
+@media (max-width: 720px) {
+  :root { --image-height: 44vh; --image-height: 44svh; }
+  .portfolio { display: block; overflow: hidden; }
+  .masthead { display: grid; position: relative; width: 100%; height: auto; }
+  .gallery { display: block; position: static; inset: auto; overflow: visible; width: 100%; }
+  .filmstrip { position: relative; top: auto; margin-top: 24px; height: var(--image-height); }
+}
