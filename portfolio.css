@@ -349,3 +349,14 @@ a:focus-visible, button:focus-visible {
   .filmstrip { margin-top: 16px; }
   .portfolio { padding-bottom: 120px; }
 }
+
+/* Mobile v13: overlap the final two biography lines with the moving images. */
+@media (max-width: 720px) {
+  .masthead {
+    color: #fff;
+    mix-blend-mode: difference;
+    filter: none;
+    text-shadow: none;
+  }
+  .filmstrip { margin-top: calc(-2.4 * var(--copy-size)); }
+}
