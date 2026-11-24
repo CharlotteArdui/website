@@ -1,0 +1,1 @@
+Open index.html in Safari. Houd de map works naast de HTML, CSS en JS. De bestanden met -inverse zijn afgeleide kleurbeelden, uitsluitend gebruikt binnen de letters. De originele projectbeelden blijven ongewijzigd.
