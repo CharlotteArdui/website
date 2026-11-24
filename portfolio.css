@@ -360,3 +360,10 @@ a:focus-visible, button:focus-visible {
   }
   .filmstrip { margin-top: calc(-2.4 * var(--copy-size)); }
 }
+
+/* Mobile v14: larger, unified typography and four-line image overlap. */
+@media (max-width: 720px) {
+  :root { --copy-size: clamp(19px, 5.2vw, 28px); }
+  .contact { font-size: inherit; }
+  .filmstrip { margin-top: calc(-4.8 * var(--copy-size)); }
+}
