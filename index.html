@@ -1,207 +1,66 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
-
-  <title>Charlotte Ardui</title>
-
-  <meta
-    name="description"
-    content="Charlotte Ardui — architect, researcher and educator."
-  >
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-      background: #ffffff;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-
-    main {
-      width: 100%;
-    }
-
-    #pdf-page {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #ffffff;
-    }
-
-    .loading,
-    .error {
-      position: fixed;
-      inset: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 24px;
-
-      background: #ffffff;
-      color: #171717;
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
-    .error {
-      display: none;
-    }
-
-    .error a {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    @media print {
-      .loading,
-      .error {
-        display: none !important;
-      }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="Charlotte Ardui, architect, researcher and educator." name="description"/>
+<title>Charlotte Ardui</title>
+<link href="portfolio.css" rel="stylesheet"/>
+<script defer="" src="slideshow.js"></script>
 </head>
-
 <body>
+<main class="portfolio" id="portfolio">
+<header aria-label="Charlotte Ardui" class="masthead" id="masthead">
+<p class="profile">
+        charlotte ardui is an architect, researcher<br class="desktop-break"/>
+        and educator working at the intersections of<br class="desktop-break"/>
+        architecture, heritage and urbanism. She holds<br class="desktop-break"/>
+        a PhD in Architecture (KULeuven, 2026) on the<br class="desktop-break"/>
+        adaptive reuse of post-war parish churches<br class="desktop-break"/>
+        in Flanders, works as a freelance architect<br class="desktop-break"/>
+        with Brussels-based office CRIT., and teaches<br class="desktop-break"/>
+        architecture and cultural history at Hasselt<br class="desktop-break"/>
+        University. Across these different roles, her<br class="desktop-break"/>
+        work starts from a careful reading of places<br class="desktop-break"/>
+        and an interest in architecture as an hopeful<br class="desktop-break"/>
+        social and cultural act.
+      </p>
+<address class="contact">
+<a href="https://www.charlotteardui.com/">www.charlotteardui.com</a>
+<a href="mailto:info@charlotteardui.com">info@charlotteardui.com</a>
+</address>
+</header>
+<section aria-label="Selected works slideshow" class="gallery">
+<div class="filmstrip" id="filmstrip">
+<div class="reel">
+<img alt="Architectural drawing from Faith in the Periphery" data-credit="periphery" fetchpriority="high" height="1085" src="works/001.webp" width="1600"/>
+<img alt="Axonometric building view from Ver(der)dichten" data-credit="verdichten" decoding="async" height="1376" src="works/002.webp" width="1242"/>
+<img alt="Cover of the publication on the redevelopment of churches" data-credit="church-publication" decoding="async" height="1081" src="works/003.webp" width="1600"/>
+<img alt="Pink architectural perspective for Hof ter Beke" data-credit="hof-ter-beke" decoding="async" height="1502" src="works/004.webp" width="1010"/>
+<img alt="Black-and-white exterior of the Dietrich Bonhoeffer Kirche" data-credit="bonhoeffer" decoding="async" height="1158" src="works/005.webp" width="812"/>
+<img alt="Rendered street view from Faith in the Periphery" data-credit="periphery" decoding="async" height="958" src="works/006.webp" width="962"/>
+<img alt="Axonometric drawing of Sint-Clara Church and the surrounding neighbourhood" data-credit="sint-clara" decoding="async" height="1108" src="works/007.webp" width="1106"/>
+<img alt="Isometric site view with collective outdoor spaces from Ver(der)dichten" data-credit="verdichten" decoding="async" height="924" src="works/008.webp" width="920"/>
+<img alt="Grid of site studies of post-war parish churches" data-credit="periphery" decoding="async" height="1376" src="works/009.webp" width="974"/>
+<img alt="Installation view of Dichter Wonen, Ruimer Leven at Sint Jozef church" data-credit="dichter-wonen" decoding="async" height="790" src="works/010.webp" width="1176"/>
+<img alt="Black-and-white photograph of the Sint-Rochus Memorial site" data-credit="sint-rochus" decoding="async" height="1026" src="works/011.webp" width="1034"/>
+<img alt="Street view of the twin houses in Antwerp for AG Vespa" data-credit="twin-houses" decoding="async" height="1284" src="works/012.webp" width="950"/>
+<img alt="Open spread of the publication on the redevelopment of churches" data-credit="church-publication" decoding="async" height="658" src="works/013.webp" width="1178"/>
+<img alt="Interior rendering from Ver(der)dichten" data-credit="verdichten" decoding="async" height="996" src="works/014.webp" width="990"/>
+<img alt="Elevation and site plan for Hof ter Beke" data-credit="hof-ter-beke" decoding="async" height="1522" src="works/015.webp" width="850"/>
+</div>
+</div>
+<p class="artwork-footnote" hidden="" id="artwork-footnote"></p>
+</section>
 
-  <main>
-    <canvas
-      id="pdf-page"
-      aria-label="Portfolio of Charlotte Ardui"
-    ></canvas>
-  </main>
+<footer class="controls" hidden="" id="controls">
 
-  <div class="loading" id="loading">
-    Loading…
-  </div>
-
-  <div class="error" id="error">
-    <p>
-      The portfolio could not be displayed.
-      <a href="./WEB%20LAYOUT%20PC%20.pdf">
-        Open the PDF.
-      </a>
-    </p>
-  </div>
-
-  <noscript>
-    <p>
-      <a href="./WEB%20LAYOUT%20PC%20.pdf">
-        Open the portfolio.
-      </a>
-    </p>
-  </noscript>
-
-  <script type="module">
-    import * as pdfjsLib from
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
-
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
-
-    const PDF_FILE = encodeURI("./WEB LAYOUT PC .pdf");
-
-    const canvas = document.getElementById("pdf-page");
-    const loading = document.getElementById("loading");
-    const error = document.getElementById("error");
-
-    let pdf;
-    let page;
-    let renderTask;
-    let resizeTimer;
-
-    async function renderPage() {
-      const originalViewport = page.getViewport({ scale: 1 });
-
-      const availableWidth = document.documentElement.clientWidth;
-      const scale = availableWidth / originalViewport.width;
-      const viewport = page.getViewport({ scale });
-
-      /*
-       * A higher internal resolution keeps text and drawings sharp
-       * on Retina screens, while the CSS dimensions remain unchanged.
-       */
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-
-      canvas.width = Math.round(viewport.width * pixelRatio);
-      canvas.height = Math.round(viewport.height * pixelRatio);
-
-      canvas.style.width = `${viewport.width}px`;
-      canvas.style.height = `${viewport.height}px`;
-
-      const context = canvas.getContext("2d", {
-        alpha: false
-      });
-
-      context.fillStyle = "#ffffff";
-      context.fillRect(0, 0, canvas.width, canvas.height);
-
-      if (renderTask) {
-        renderTask.cancel();
-      }
-
-      renderTask = page.render({
-        canvasContext: context,
-        viewport,
-        transform: pixelRatio === 1
-          ? null
-          : [pixelRatio, 0, 0, pixelRatio, 0, 0]
-      });
-
-      try {
-        await renderTask.promise;
-        loading.style.display = "none";
-      } catch (renderError) {
-        if (renderError?.name !== "RenderingCancelledException") {
-          throw renderError;
-        }
-      }
-    }
-
-    async function initialisePortfolio() {
-      try {
-        pdf = await pdfjsLib.getDocument(PDF_FILE).promise;
-        page = await pdf.getPage(1);
-
-        await renderPage();
-      } catch (loadError) {
-        console.error(loadError);
-
-        loading.style.display = "none";
-        error.style.display = "flex";
-      }
-    }
-
-    window.addEventListener("resize", () => {
-      if (!page) return;
-
-      clearTimeout(resizeTimer);
-
-      resizeTimer = setTimeout(() => {
-        renderPage().catch(console.error);
-      }, 150);
-    });
-
-    initialisePortfolio();
-  </script>
+<button aria-label="Pause slideshow" class="motion-button" data-playing="true" id="toggle-motion" title="Pause slideshow" type="button">
+<span aria-hidden="true" class="motion-icon"></span>
+</button>
+</footer>
+</main>
 
 </body>
 </html>
