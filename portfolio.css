@@ -298,3 +298,37 @@ a:focus-visible, button:focus-visible {
     --image-height: min(calc(14.4 * var(--copy-size)), calc(100dvh - var(--image-top) - 92px));
   }
 }
+
+/* Mobile: keep the biography above the images, with a scrollable fallback
+   on short screens. Desktop composition is unchanged. */
+@media (max-width: 720px) {
+  html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: auto;
+  }
+  .portfolio {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-bottom: 144px;
+  }
+  .masthead {
+    position: relative;
+    inset: auto;
+    color: #000;
+    mix-blend-mode: normal;
+    filter: none;
+    text-shadow: none;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .gallery { display: contents; }
+  .filmstrip {
+    position: relative;
+    top: auto;
+    margin-top: 24px;
+  }
+  .artwork-footnote { z-index: 1; }
+}
