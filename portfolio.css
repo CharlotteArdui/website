@@ -341,3 +341,11 @@ a:focus-visible, button:focus-visible {
   .gallery { display: block; position: static; inset: auto; overflow: visible; width: 100%; }
   .filmstrip { position: relative; top: auto; margin-top: 24px; height: var(--image-height); }
 }
+
+/* Mobile v12: larger artwork and closer spacing, without overlapping text. */
+@media (max-width: 720px) {
+  :root { --image-height: 52vh; --image-height: 52svh; --image-gap: 18px; }
+  .masthead { gap: 14px 0; padding-top: 12px; }
+  .filmstrip { margin-top: 16px; }
+  .portfolio { padding-bottom: 120px; }
+}

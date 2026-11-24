@@ -94,7 +94,7 @@ function sizeFilmstrip() {
   stripLeft = parseFloat(stripStyle.left);
   stripTop = reelBox.top - portfolioBox.top;
   viewportWidth = portfolioBox.width;
-  baseSpeed = viewportWidth <= 720 ? 32 : 29;
+  baseSpeed = viewportWidth <= 720 ? 96 : 29;
 
   if (previousLoopWidth > 0) distance *= loopWidth / previousLoopWidth;
 
@@ -126,7 +126,7 @@ function advanceFilmstrip(time) {
     const midpoint = viewportWidth / 2;
     const rightHalfWidth = Math.max(1, viewportWidth - 1 - midpoint);
     const progress = Math.max(0, Math.min(1, (pointerX - midpoint) / rightHalfWidth));
-    const speed = baseSpeed * (1 + (maxSpeedMultiplier - 1) * progress);
+    const speed = viewportWidth <= 720 ? baseSpeed : baseSpeed * (1 + (maxSpeedMultiplier - 1) * progress);
     distance = (distance + speed * elapsed / 1000) % loopWidth;
     paintPosition();
   }
